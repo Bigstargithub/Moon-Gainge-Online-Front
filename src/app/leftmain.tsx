@@ -1,33 +1,21 @@
 import { useState } from "react"
 import { SLeftMain } from "./styled"
+import MainLogo from "./components/main/main_logo"
+import MainProfile from "./components/main/main_profile"
+import MainSearch from "./components/main/main_search"
+import MainCategory from "./components/main/main_category"
+import MainBottom from "./components/main/main_bottom"
 
 export default function LeftMain() {
   const [activeMenu, setActiveMenu] = useState<number>(0)
 
   return (
     <SLeftMain>
-      <div className="logo">
-        <img src="/main-logo.svg" alt="메인 로고" />
-      </div>
-      <div className="category">
-        <ul>
-          <li className={
-            activeMenu === 1 ? 'active' : ''
-          } onClick={() => setActiveMenu(1)}>
-            전체보기
-          </li>
-          <li className={
-            activeMenu === 2 ? 'active' : ''
-          } onClick={() => setActiveMenu(2)}>
-            2022 법정의무교육
-          </li>
-          <li className={
-            activeMenu === 3 ? 'active' : ''
-          } onClick={() => setActiveMenu(3)}>
-            하열사 PT
-          </li>
-        </ul>
-      </div>
+      <MainLogo />
+      <MainProfile />
+      <MainSearch />
+      <MainCategory />
+      <MainBottom />
     </SLeftMain >
   )
 }
