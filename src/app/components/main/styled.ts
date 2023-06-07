@@ -6,6 +6,20 @@ export const SMainLogo = styled.div`
   align-items: center;
   margin-top:3rem;
   cursor:pointer;
+  .logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    img {
+      height: 3.9rem;
+    }
+    p {
+      margin-top: 2rem;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #434B65;
+    }
+  }
 `;
 
 export const SMainProfile = styled.div`
@@ -45,10 +59,24 @@ export const SMainSearch = styled.div`
   img {
     cursor: pointer;
   }
+  #class_search {
+    width: 100%;
+    background: none;
+    border: none;
+    margin-left: 1.15rem;
+    &:focus {
+      outline: none;
+    }
+    &::placeholder {
+      color: #A7B1D1;
+    }
+  }
 `;
 
 export const SMainCategory = styled.div`
   width: calc(100% - 2rem);
+  max-height: 50%;
+  overflow: scroll;
   margin:0 auto;
   margin-top: 2rem;
   border-top: 1px solid #E4E8F4;
@@ -58,6 +86,7 @@ export const SMainCategory = styled.div`
     margin-top: 1.5rem;
     padding-bottom: 1.5rem;
     border-bottom: 1px solid #E4E8F4;
+    cursor: pointer;
     span {
       font-size: 1.7rem;
       font-weight: 700;
@@ -68,19 +97,24 @@ export const SMainCategory = styled.div`
   }
 
   ul {
-    margin-left: 2rem;
     margin-top: 2rem;
     li {
       list-style: none;
       font-size: 1.7rem;
       font-weight: 600;
       color: #434B65;
+      padding-left: 2rem;
+      padding-bottom: 1.5rem;
       margin-top: 2rem;
+      cursor: pointer;
       &:first-child {
         margin-top: 0;
       }
       &.active {
         color: #005EFF;
+      }
+      &.board {
+        border-bottom: 1px solid #E4E8F4;
       }
     }
   }
@@ -92,6 +126,7 @@ export const SMainBottom = styled.div`
   position: absolute;
   bottom: 0;
   width: 100%;
+  background-color: #fff;
   .board {
     cursor:pointer;
     width: calc(100% - 2rem);

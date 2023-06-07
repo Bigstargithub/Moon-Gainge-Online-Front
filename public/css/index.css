@@ -8,3 +8,7 @@ html,body,p,ul {
   margin:0rem;
   font-size:10px;
 }
+
+a,p,span {
+  text-decoration:  none;
+}

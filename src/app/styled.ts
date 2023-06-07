@@ -9,6 +9,9 @@ export const SLeftMain = styled.div`
   left:0;
   width:26.7rem;
   height:100vh;
+  border-right: 0.1rem solid #E4E8F4;
+  z-index: 9;
+  background-color: #FFF;
   .category {
     margin-top:0.4rem;
     ul {
