@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { SMainCategory } from "./styled";
+import ClassCategoryList from "./class_category_list";
+import BoardCategoryList from "../board/board_category_list";
 
-export default function MainCategory() {
-  const [activeCategory, setActiveCategory] = useState<Number>(1);
+export default function MainCategory({activeCategory, setActiveCategory, activePage} : any) {
 
   return (
     <SMainCategory>
@@ -10,12 +11,14 @@ export default function MainCategory() {
         <span>전체보기</span>
       </div>
       <ul>
-        <li className={
-          activeCategory === 1 ? 'active' : ''
-        } onClick={() => setActiveCategory(1)}>제작마케팅센터 지식나눔이 두줄이 되어버린다면!</li>
-        <li className={
-          activeCategory === 2 ? 'active' : ''
-        } onClick={() => setActiveCategory(2)}>신입사원 필수 시청 영상</li>
+        {activePage === "main" ? 
+        <>
+          <ClassCategoryList activeCategory={activeCategory} setActiveCategory={setActiveCategory} />
+        </> : 
+        <>
+          <BoardCategoryList activeCategory={activeCategory} setActiveCategory={setActiveCategory} />
+        </>}
+       
       </ul>
     </SMainCategory>
   )
