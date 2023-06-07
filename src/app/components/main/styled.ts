@@ -67,6 +67,9 @@ export const SMainSearch = styled.div`
     &:focus {
       outline: none;
     }
+    &::placeholder {
+      color: #A7B1D1;
+    }
   }
 `;
 

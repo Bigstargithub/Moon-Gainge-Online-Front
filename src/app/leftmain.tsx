@@ -13,7 +13,7 @@ export default function LeftMain({ activePage }: any) {
     <SLeftMain>
       <MainLogo />
       <MainProfile />
-      <MainSearch />
+      {activePage === 'main' ? <><MainSearch /></> : <></>}
       <MainCategory activeCategory={activeCategory} setActiveCategory={setActiveCategory} activePage={activePage} />
       <MainBottom activePage={activePage} />
     </SLeftMain >
